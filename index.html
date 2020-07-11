@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Vector Map</title>
+    <link href="jqvmap.css" rel="stylesheet"/>
+    <link href="bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        
+        *{
+            font-family: Verdana;
+        }
+        
+        #vmap{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            width: 100%;
+            height: 600px;
+        }
+        
+        .title1{
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 90%;
+        }
+        
+        .title2{
+            margin-left: 50px;
+            margin-top: 25px;
+            width: 90%;
+        }
+    </style>
+</head>
+    <body>
+        <div class="row">
+        <div class="col-4">
+            <h1 class="title1">Our alumni are all over the world!</h1>
+            <h3 class="title2">Hover over a region to see the alumni.</h3>
+        </div>
+            
+        <div class="col-8">
+        <div class="container">
+            <div id="vmap"></div>
+            <h1 id="name"></h1>
+        </div>
+        </div>
+        
+        <script src="jquery.min.js"></script>
+        <script src="jquery.vmap.js"></script>
+        <script src="maps/jquery.vmap.world.js"></script>
+        <script>
+            $('#vmap').vectorMap({
+                map: 'world_en',
+                backgroundColor: '#0478a1',
+                borderColor: '#818181',
+                borderOpacity: 0.25,
+                borderWidth: 2,
+                color: '#f4f3f0',
+                enableZoom: true,
+                hoverColor: '#c9dfaf',
+                scaleColors: ['#b6d6ff', '#005ace'],
+                selectedColor: '#c9dfaf',
+                selectedRegions: null,
+                showTooltip: true,
+                
+                onRegionClick: function(event, code, region){
+                    var message = 'You clicked "'
+                    + region
+                    + '" which has the Alumni: '
+                    + "Bloembergen, Wendy";
+                    alert(message);
+
+                }
+            })
+        
+        </script>
+    </body>
+<html>
