@@ -18,52 +18,51 @@
         
         body{
             font-family: "Poppins", Arial, sans-serif;
-            font-weight: 300;
-            font-size: 16px;
-            line-height: 2;
-            color: gray;
-            background: whitesmoke; 
+            max-width: 100%;
+            background: white;
+            
             }
         
                  
         #header {
-              background: #fff;
+              background: #ffffff;
               z-index: 997;
-              padding: 20px 0;
+              padding-top: 40px;
+              max-width: 100%;
+              margin: 0 80px 0 80px;
+
             }
 
             #header.header-scrolled {
               box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-              padding: 12px 0;
+              padding: 12px;
             }
 
             #header .logo {
               font-size: 32px;
-              margin: 0;
-              padding: 0;
-              line-height: 1;
-              font-weight: 700;
+              font-weight: 350;
               letter-spacing: 0.5px;
-            }
+              color: #482c7e;
 
-            #header .logo a {
-              color: #5f687b;
             }
+             
+              #header .sublogo {
+              margin-left: 70px;
+              margin-top: -16px;
+              font-size: 20px;
+              font-weight: 700;
+              letter-spacing: 2px;
+              color: #858ea1;
 
-            #header .logo img {
-              max-height: 40px;
-            }
+             }
                  
                  
             #hero {
-              width: 100%;
-              height: 100vh;
-              background: #fff;
+              background: #ffffff;
               padding-top: 82px;
             }
 
             #hero h1 {
-              margin: 0;
               font-size: 48px;
               font-weight: 700;
               line-height: 56px;
@@ -75,72 +74,91 @@
               margin: 10px 0  30px 0;
               font-size: 24px;
             }
+             
+             .main{
+                 margin: auto;
+                 max-width: 90%;
+             }
+             
+             .alumni{
+                 max-width: 90%;
+             }
+             
+             #alumni name {
+                 margin-top: 12px;
+             }
                        
         #vmap{
-            padding-top: 10%;
-            padding-left: 10%;
-            padding-right: 10%;
-            height: 600px;
+            width: 100%;
+            height: 400px;
         }
         
     </style>
     
     <body>
-        <header id="header" class="fixed-top">
-            <div class="container d-flex align-items-center">
+        <header id="header">
+        <h1><img id="Headerlogo" src="Headerlogo.jpg" width="60" height="60"><span class="logo"> Schulich School of Medicine & Dentistry</span> </h1>
+            <h2 class="sublogo">NEPHROLOGY DIVISION ALUMNI MAP</h2>
 
-                <h1 class="logo"><a href="index.html">Alumni Map</a></h1>
-    
-            </div>
         </header>
             
-        <section id="hero" class="d-flex align-items-center">
+        <section id="hero">
 
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+              <div class="row main">
+                <div class="col">
                   <h1>Our alumni are all over the world!</h1>
-                  <h2>Hover over a country to see its alumni.</h2>
+                  <h2>Hover over a shaded country to see its alumni.</h2>
                 </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img">
+                <div class="col">
                 <div id="vmap"></div>
                 </div>
               </div>
-            </div>
 
-        </section><!-- End Hero -->
+        </section>
         
-        
+    
+
+        <div class="alumni"></div>
+            
+            
+        <img id="flagca" src="200ppi/Ca.png" width="120" height="60">
+        <img id="flagus" src="200ppi/Sa.png" width="120" height="60">
+        <img id="flagru">
         <h3 id="name"></h3>
-
-        
+            
+            
         <script src="jquery.min.js"></script>
         <script src="jquery.vmap.js"></script>
         <script src="maps/jquery.vmap.world.js"></script>
         <script>
             $('#vmap').vectorMap({
                 map: 'world_en',
-                backgroundColor: '#0478a1',
+                backgroundColor: '#ffffff',
                 borderColor: '#818181',
                 borderOpacity: 0.25,
                 borderWidth: 2,
                 color: '#f4f3f0',
-                enableZoom: true,
-                hoverColor: '#c9dfaf',
-                scaleColors: ['#b6d6ff', '#005ace'],
-                selectedColor: '#c9dfaf',
+                enableZoom: false,
+                hoverColor: '#000000',
+                selectedColor: '#482c7e',
                 selectedRegions: null,
-                showTooltip: true,
+
+                
+                
                 
                 onRegionClick: function(element, code, region)
                     {
                         if (code == 'ca')
                         {
-                            $('#name').html(region+"("+code+")");
+                            $('#imgca').html();
+                            $('#name').html(region);
+                            
+                            
                         }
-                        else if (code == 'ru')
+                        else if (code == 'us')
                         {
-                            $('#name').html(region+"("+code+")");
+                            $('#imgus').html();
+                            $('#name').html(region);
                         }
                         else if (code == 'us')
                         {
@@ -148,8 +166,23 @@
                         }
                     },
             });
+            
+            jQuery(document).ready(function() {
+       jQuery('#vmap').vectorMap('set', 'colors', {ca: '#3d2a77', 
+                                                    sa: '#45357a', 
+                                                    us: '#61567c',
+                                                   pa: '#69637a',
+                                                   gb: '#676277',
+                                                   in: '#676277',
+                                                   ua: '#676277',
+                                                   au: '#676277',
+                                                   ae: '#676277',
+                                                   eg: '#676277',
+                                                   kw: '#676277',
+                                                   it: '#676277',
+                                                   hn: '#676277'});
+});
         
         </script>
-
     </body>
 <html>
