@@ -81,11 +81,29 @@
              }
              
              .alumni{
+                 margin: auto;
                  max-width: 90%;
              }
              
-             #alumni name {
+             #name {
                  margin-top: 12px;
+                 margin-left: 14px;
+             }
+             
+             #picture{
+                 margin-left: 14px;
+             }
+             
+             #line{
+                 color: black;
+                 width: 100%;
+                 height: 1px;
+                 margin-top: 12px;
+             }
+             
+             .names{
+                 margin-left: 14px;
+                 font-weight: 100;
              }
                        
         #vmap{
@@ -107,7 +125,7 @@
               <div class="row main">
                 <div class="col">
                   <h1>Our alumni are all over the world!</h1>
-                  <h2>Hover over a shaded country to see its alumni.</h2>
+                  <h2>Hover and click a shaded country to see its alumni.</h2>
                 </div>
                 <div class="col">
                 <div id="vmap"></div>
@@ -118,14 +136,84 @@
         
     
 
-        <div class="alumni"></div>
+        <div class="alumni">
             
-            
-        <img id="flagca" src="200ppi/Ca.png" width="120" height="60">
-        <img id="flagus" src="200ppi/Sa.png" width="120" height="60">
-        <img id="flagru">
+        <img id="picture" src="200ppi/White.png" width="90" height="45">
         <h3 id="name"></h3>
+        <h5 class= "names" id="1"></h5>
+            <h5 class= "names" id="2"></h5>
+            <h5 class= "names" id="3"></h5>
+            <h5 class= "names" id="4"></h5>
+            <h5 class= "names" id="5"></h5>
+            <h5 class= "names" id="6"></h5>
+            <h5 class= "names" id="7"></h5>
+            <h5 class= "names" id="8"></h5>
+            <h5 class= "names" id="9"></h5>
+            <h5 class= "names" id="10"></h5>
+            <h5 class= "names" id="11"></h5>
+            <h5 class= "names" id="12"></h5>
+            <h5 class= "names" id="13"></h5>
+            <h5 class= "names" id="14"></h5>
+            <h5 class= "names" id="15"></h5>
+            <h5 class= "names" id="16"></h5>
+            <h5 class= "names" id="17"></h5>
+            <h5 class= "names" id="18"></h5>
+            <h5 class= "names" id="19"></h5>
+            <h5 class= "names" id="20"></h5>
+            <h5 class= "names" id="21"></h5>
+            <h5 class= "names" id="22"></h5>
+            <h5 class= "names" id="23"></h5>
+            <h5 class= "names" id="24"></h5>
+            <h5 class= "names" id="25"></h5>
+            <h5 class= "names" id="26"></h5>
+            <h5 class= "names" id="27"></h5>
+            <h5 class= "names" id="28"></h5>
+            <h5 class= "names" id="29"></h5>
+            <h5 class= "names" id="30"></h5>
+            <h5 class= "names" id="31"></h5>
+            <h5 class= "names" id="32"></h5>
+            <h5 class= "names" id="33"></h5>
+            <h5 class= "names" id="34"></h5>
+            <h5 class= "names" id="35"></h5>
+            <h5 class= "names" id="36"></h5>
+            <h5 class= "names" id="37"></h5>
+            <h5 class= "names" id="38"></h5>
+            <h5 class= "names" id="39"></h5>
+            <h5 class= "names" id="40"></h5>
+            <h5 class= "names" id="41"></h5>
+            <h5 class= "names" id="42"></h5>
+            <h5 class= "names" id="43"></h5>
+            <h5 class= "names" id="44"></h5>
+            <h5 class= "names" id="45"></h5>
+            <h5 class= "names" id="46"></h5>
+            <h5 class= "names" id="47"></h5>
+            <h5 class= "names" id="48"></h5>
+            <h5 class= "names" id="49"></h5>
+            <h5 class= "names" id="50"></h5>
+            <h5 class= "names" id="51"></h5>
+            <h5 class= "names" id="52"></h5>
+            <h5 class= "names" id="53"></h5>
+            <h5 class= "names" id="54"></h5>
+            <h5 class= "names" id="55"></h5>
+            <h5 class= "names" id="56"></h5>
+            <h5 class= "names" id="57"></h5>
+            <h5 class= "names" id="58"></h5>
+            <h5 class= "names" id="59"></h5>
+            <h5 class= "names" id="60"></h5>
+            <h5 class= "names" id="61"></h5>
+            <h5 class= "names" id="62"></h5>
+            <h5 class= "names" id="63"></h5>
+            <h5 class= "names" id="64"></h5>
+            <h5 class= "names" id="65"></h5>
+            <h5 class= "names" id="66"></h5>
+            <h5 class= "names" id="67"></h5>
             
+            
+            
+        
+        </div>
+        
+        <div id="line"></div>
             
         <script src="jquery.min.js"></script>
         <script src="jquery.vmap.js"></script>
@@ -140,7 +228,7 @@
                 color: '#f4f3f0',
                 enableZoom: false,
                 hoverColor: '#000000',
-                selectedColor: '#482c7e',
+                selectedColor: '#000000',
                 selectedRegions: null,
 
                 
@@ -148,22 +236,162 @@
                 
                 onRegionClick: function(element, code, region)
                     {
+                        
+                        
                         if (code == 'ca')
                         {
-                            $('#imgca').html();
-                            $('#name').html(region);
                             
+
+                            $('#picture').attr('src', '200ppi/Ca.png');        
+                            $('#name').html(region);
+                            $('#1').text("1 - Kortas, Claude");
+                            $('#2').text("2 - Lefebvre, Jacqueline");
+                            $('#3').text("3 - Duong, Dung");
+                            $('#4').text("4 - Callaghan, Wayne");
+                            $('#5').text("5 - Tibbles, Lee");
+                            $('#6').text("6 - Vitou, Louise");
+                            $('#7').text("7 - Gogan, Nessa");
+                            $('#8').text("8 - Watson, Paul");
+                            $('#9').text("9 - Moist, Louise");
+                            $('#10').text("10 - Kadri, Al");
+                            $('#11').text("11 - McLaughlin, Kevin");
+                            $('#12').text("12 - Bagga, Amit");
+                            $('#13').text("13 - Pandeya, Sanjaya");
+                            $('#14').text("14 - Garg, Amit");
+                            $('#15').text("15 - Krepinsky, Joan");
+                            $('#16').text("16 - Garland, Jocelyn");
+                            $('#17').text("17 - Suri, Rita");
+                            $('#18').text("18 - Cass, Aaron");
+                            $('#19').text("19 - Rehman, Faisal");
+                            $('#20').text("20 - Nesrallah, Gihad");
+                            $('#21').text("21 - Shulman, Tanya");
+                            $('#22').text("22 - Sharma, Ajay");
+                            $('#23').text("23 - Carson, Rachel");
+                            $('#24').text("24 - Hanson, Garth");
+                            $('#25').text("25 - Mainra, Rahul");
+                            $('#26').text("26 - Proulx, Normand");
+                            $('#27').text("27 - Yang, Robert");
+                            $('#28').text("28 - Gregor, Laura");
+                            $('#29').text("29 - Hassan, Abubaker");
+                            $('#30').text("30 - Jain, Arsh");
+                            $('#31').text("31 - Joseph, Geena");
+                            $('#32').text("32 - Wyllie, Blair");
+                            $('#33').text("33 - Butan, Radu");
+                            $('#34').text("34 - Weir, Matthew");
+                            $('#35').text("35 - Sultan, Nabil");
+                            $('#36').text("36 - Shamseddin, Mohammad");
+                            $('#37').text("37 - Huang, Susan");
+                            $('#38').text("38 - Mathew, Anna");
+                            $('#39').text("39 - Iyer, Hariharan");
+                            $('#40').text("40 - Elwood, Amanda");
+                            $('#41').text("41 - Lotfy, Khaled");
+                            $('#42').text("42 - Richardson, Bonnie");
+                            $('#43').text("43 - Hildebrand, Ainslie");
+                            $('#44').text("44 - Lam, Ngan");
+                            $('#45').text("45 - Thomson, Benjamin");
+                            $('#46').text("46 - Silva Gomez, Cecilia");
+                            $('#47').text("47 - Hinkkala, Kaarlo");
+                            $('#48').text("48 - Shah, Sachin");
+                            $('#49').text("49 - Acedillo, Rey");
+                            $('#50').text("50 - Burke, Andrew");
+                            $('#51').text("51 - Sekhon, Gurbir");
+                            $('#52').text("52 - Patel, Amit");
+                            $('#53').text("53 - Yohanna, Seychelle");
+                            $('#54').text("54 - Dev, Varun");
+                            $('#55').text("55 - Hemmett, Ioulia");
+                            $('#56').text("56 - Qirjazi, Elena");
+                            $('#57').text("57 - Govind, Mayur");
+                            $('#58').text("58 - Altuwaijri, Wafa");
+                            $('#59').text("59 - Quinn, Kathleen");
+                            $('#60').text("60 - Silverberg, Rory");
+                            $('#61').text("61 - Mann, Shawna");
+                            $('#62').text("62 - Zhu, Justin");
+                            $('#63').text("63 - Al-Zaneen, Gaeth");
+                            $('#64').text("64 - Chiu, Michael");
+                            $('#65').text("65 - Pazhekattu, Rinu");
+                            $('#66').text("66 - Ratner, Shemer");
+                            $('#67').text("67 - Clark, David");
+            
+
+                        }
+                        else if (code == 'sa')
+                        {
+                            $('#picture').attr('src', '200ppi/Sa.png');
+                            $('#name').html(region);
+                            $('#1').text("1 - Al-Hejaili, Fayez");
+                            $('#2').text("2 - Abunijem, Zuhair");
+                            $('#3').text("3 - Housawi, Abdulrahman");
+                            $('#4').text("4 - Al-Shaebi, Fuad");
+                            $('#5').text("5 - Al-Beladi, Fatimah");
+                            $('#6').text("6 - Al-Eid, Hassan");
+                            $('#7').text("7 - Al-Qurashi, Salem");
+                            $('#8').text("8 - Almalki, Abudllah");
+                            $('#9').text("9 - Habhab, Wael");
+                            $('#10').text("10 - Al-Harthi, Majed");
+                            $('#11').text("11 - AlHomayeed, Badr");
+                            $('#12').text("12 - AlMatouq, Basim");
+                            $('#13').text("13 - Hakami, Ali");
+                            $('#14').text("14 - Almalki, Najlaa");
+                            $('#15').text("15 - Zabani, Najla");
+                            $('#16').text("16 - Banamah, Turki");
+                            $('#17').text("17 - Al-Hozali, Hanadi");
+                            $('#18').text("18 - Al-Obaili, Saad");
+                            $('#19').text("19 - Bukhari, Rafat");
+                            $('#20').text("20 - Al-Omi, Mohammed");
+                            $('#21').text("21 - Al Katheeri, Ali");
+                            $('#22').text("22 - Dahlan, Randah");
+                            $('#23').text("23 - Dammas, Hassnah");
+                            $('#24').text("24 - Habibullah, Zainab");
+                            $('#25').text("25 - Kashgary, Abdullah");
+                            $('#26').text("26 - Al Hazmi, Areej");
+                            $('#27').text("27 - Sadagah, Laila");
+                            $('#28').text("28 - Alem, Alaa");
+                            $('#29').text("29 - Alfageeh, Ali");
+                            $('#30').text("30 - Ankawi, Ghada");
+                            $('#31').text("31 - Asiri, Abdullah");
+                            $('#32').text("32 - Khojah, Suhail");
+                            $('#33').text("33 - Alsolami, Enad");
+                            $('#34').text("34 - Baduwaylan, Reem");
+                            $('#35').text("35 - Alhomayani, Faisal");
+                            $('#36').text("36 - Dahlan, Sarah");
+                            $('#37').text("");
+                            $('#38').text("");
+                            $('#39').text("");
+                            $('#40').text("");
+                            $('#41').text("");
+                            $('#42').text("");
+                            $('#43').text("");
+                            $('#44').text("");
+                            $('#45').text("");
+                            $('#46').text("");
+                            $('#47').text("");
+                            $('#48').text("");
+                            $('#49').text("");
+                            $('#50').text("");
+                            $('#51').text("");
+                            $('#52').text("");
+                            $('#53').text("");
+                            $('#54').text("");
+                            $('#55').text("");
+                            $('#56').text("");
+                            $('#57').text("");
+                            $('#58').text("");
+                            $('#59').text("");
+                            $('#60').text("");
+                            $('#61').text("");
+                            $('#62').text("");
+                            $('#63').text("");
+                            $('#64').text("");
+                            $('#65').text("");
+                            $('#66').text("");
+                            $('#67').text("");
                             
                         }
                         else if (code == 'us')
                         {
-                            $('#imgus').html();
-                            $('#name').html(region);
-                        }
-                        else if (code == 'us')
-                        {
                             
                         }
+                        $(this).attr("src", newImgSrc);
                     },
             });
             
