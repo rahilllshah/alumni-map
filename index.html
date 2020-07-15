@@ -9,7 +9,10 @@
     
     <link href="jqvmap.css" rel="stylesheet"/>
     <link href="bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <script src="jquery.min.js"></script>                                               
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.21/r-2.2.5/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/r-2.2.5/datatables.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     
 </head>
@@ -29,7 +32,7 @@
               z-index: 997;
               padding-top: 40px;
               max-width: 100%;
-              margin: 0 80px 0 80px;
+              margin: 0 80px 40px 80px;
 
             }
 
@@ -58,7 +61,6 @@
                  
                  
             #hero {
-              background: #ffffff;
               padding-top: 82px;
             }
 
@@ -66,18 +68,31 @@
               font-size: 48px;
               font-weight: 700;
               line-height: 56px;
-              color: #3e4450;
+              color: #ffffff;
             }
 
             #hero h2 {
-              color: #858ea1;
+              color: whitesmoke;
               margin: 10px 0  30px 0;
-              font-size: 24px;
+              font-size: 20px;
             }
              
              .main{
                  margin: auto;
                  max-width: 90%;
+             }
+             
+             .major{
+                 margin: auto;
+                 max-width: 90%;
+                 background: rgb(149,10,203);
+                 background: linear-gradient(90deg, rgba(149,10,203,0.9) 0%, rgba(122,116,158,0.9) 100%);
+        
+                 -webkit-box-shadow: 0px -4px 74px -40px rgba(0,0,0,0.74);
+                -moz-box-shadow: 0px -4px 74px -40px rgba(0,0,0,0.74);
+                 box-shadow: 0px -4px 74px -40px rgba(0,0,0,0.74);
+                 border-radius: 20px 20px 0 0;
+                    
              }
              
              .alumni{
@@ -94,6 +109,14 @@
                  margin-left: 14px;
              }
              
+             .tableclass{
+                 margin: auto;
+                 max-width: 88%;
+                 background: white;
+                 padding: 20px;
+                 border-radius: 20px 20px 0 0;
+             }
+             
              #line{
                  color: black;
                  width: 100%;
@@ -106,9 +129,8 @@
                  font-weight: 100;
              }
                        
-        #vmap{
-            width: 100%;
-            height: 400px;
+        .map{
+            padding-bottom: 80px;
         }
         
     </style>
@@ -119,298 +141,585 @@
             <h2 class="sublogo">NEPHROLOGY DIVISION ALUMNI MAP</h2>
 
         </header>
-            
+          
+    <div class="major">    
         <section id="hero">
 
               <div class="row main">
                 <div class="col">
                   <h1>Our alumni are all over the world!</h1>
-                  <h2>Hover and click a shaded country to see its alumni.</h2>
+                  <h2>Hover and click a pin  to see the alumni.</h2>
                 </div>
-                <div class="col">
-                <div id="vmap"></div>
+                <div class="col map">
+                <iframe src="https://fortress.maptive.com/ver4/56957bd5d6d537f4c91c13d7c0c1a1a3" frameborder="5" framecolor="white" width="100%" height="500" allow="geolocation"></iframe>
                 </div>
               </div>
 
         </section>
         
-    
-
-        <div class="alumni">
-            
-        <img id="picture" src="200ppi/White.png" width="90" height="45">
-        <h3 id="name"></h3>
-        <h5 class= "names" id="1"></h5>
-            <h5 class= "names" id="2"></h5>
-            <h5 class= "names" id="3"></h5>
-            <h5 class= "names" id="4"></h5>
-            <h5 class= "names" id="5"></h5>
-            <h5 class= "names" id="6"></h5>
-            <h5 class= "names" id="7"></h5>
-            <h5 class= "names" id="8"></h5>
-            <h5 class= "names" id="9"></h5>
-            <h5 class= "names" id="10"></h5>
-            <h5 class= "names" id="11"></h5>
-            <h5 class= "names" id="12"></h5>
-            <h5 class= "names" id="13"></h5>
-            <h5 class= "names" id="14"></h5>
-            <h5 class= "names" id="15"></h5>
-            <h5 class= "names" id="16"></h5>
-            <h5 class= "names" id="17"></h5>
-            <h5 class= "names" id="18"></h5>
-            <h5 class= "names" id="19"></h5>
-            <h5 class= "names" id="20"></h5>
-            <h5 class= "names" id="21"></h5>
-            <h5 class= "names" id="22"></h5>
-            <h5 class= "names" id="23"></h5>
-            <h5 class= "names" id="24"></h5>
-            <h5 class= "names" id="25"></h5>
-            <h5 class= "names" id="26"></h5>
-            <h5 class= "names" id="27"></h5>
-            <h5 class= "names" id="28"></h5>
-            <h5 class= "names" id="29"></h5>
-            <h5 class= "names" id="30"></h5>
-            <h5 class= "names" id="31"></h5>
-            <h5 class= "names" id="32"></h5>
-            <h5 class= "names" id="33"></h5>
-            <h5 class= "names" id="34"></h5>
-            <h5 class= "names" id="35"></h5>
-            <h5 class= "names" id="36"></h5>
-            <h5 class= "names" id="37"></h5>
-            <h5 class= "names" id="38"></h5>
-            <h5 class= "names" id="39"></h5>
-            <h5 class= "names" id="40"></h5>
-            <h5 class= "names" id="41"></h5>
-            <h5 class= "names" id="42"></h5>
-            <h5 class= "names" id="43"></h5>
-            <h5 class= "names" id="44"></h5>
-            <h5 class= "names" id="45"></h5>
-            <h5 class= "names" id="46"></h5>
-            <h5 class= "names" id="47"></h5>
-            <h5 class= "names" id="48"></h5>
-            <h5 class= "names" id="49"></h5>
-            <h5 class= "names" id="50"></h5>
-            <h5 class= "names" id="51"></h5>
-            <h5 class= "names" id="52"></h5>
-            <h5 class= "names" id="53"></h5>
-            <h5 class= "names" id="54"></h5>
-            <h5 class= "names" id="55"></h5>
-            <h5 class= "names" id="56"></h5>
-            <h5 class= "names" id="57"></h5>
-            <h5 class= "names" id="58"></h5>
-            <h5 class= "names" id="59"></h5>
-            <h5 class= "names" id="60"></h5>
-            <h5 class= "names" id="61"></h5>
-            <h5 class= "names" id="62"></h5>
-            <h5 class= "names" id="63"></h5>
-            <h5 class= "names" id="64"></h5>
-            <h5 class= "names" id="65"></h5>
-            <h5 class= "names" id="66"></h5>
-            <h5 class= "names" id="67"></h5>
-            
-            
-            
         
-        </div>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').dataTable();
+        });
         
-        <div id="line"></div>
-            
-        <script src="jquery.min.js"></script>
-        <script src="jquery.vmap.js"></script>
-        <script src="maps/jquery.vmap.world.js"></script>
-        <script>
-            $('#vmap').vectorMap({
-                map: 'world_en',
-                backgroundColor: '#ffffff',
-                borderColor: '#818181',
-                borderOpacity: 0.25,
-                borderWidth: 2,
-                color: '#f4f3f0',
-                enableZoom: false,
-                hoverColor: '#000000',
-                selectedColor: '#000000',
-                selectedRegions: null,
-
-                
-                
-                
-                onRegionClick: function(element, code, region)
-                    {
-                        
-                        
-                        if (code == 'ca')
-                        {
-                            
-
-                            $('#picture').attr('src', '200ppi/Ca.png');        
-                            $('#name').html(region);
-                            $('#1').text("1 - Kortas, Claude");
-                            $('#2').text("2 - Lefebvre, Jacqueline");
-                            $('#3').text("3 - Duong, Dung");
-                            $('#4').text("4 - Callaghan, Wayne");
-                            $('#5').text("5 - Tibbles, Lee");
-                            $('#6').text("6 - Vitou, Louise");
-                            $('#7').text("7 - Gogan, Nessa");
-                            $('#8').text("8 - Watson, Paul");
-                            $('#9').text("9 - Moist, Louise");
-                            $('#10').text("10 - Kadri, Al");
-                            $('#11').text("11 - McLaughlin, Kevin");
-                            $('#12').text("12 - Bagga, Amit");
-                            $('#13').text("13 - Pandeya, Sanjaya");
-                            $('#14').text("14 - Garg, Amit");
-                            $('#15').text("15 - Krepinsky, Joan");
-                            $('#16').text("16 - Garland, Jocelyn");
-                            $('#17').text("17 - Suri, Rita");
-                            $('#18').text("18 - Cass, Aaron");
-                            $('#19').text("19 - Rehman, Faisal");
-                            $('#20').text("20 - Nesrallah, Gihad");
-                            $('#21').text("21 - Shulman, Tanya");
-                            $('#22').text("22 - Sharma, Ajay");
-                            $('#23').text("23 - Carson, Rachel");
-                            $('#24').text("24 - Hanson, Garth");
-                            $('#25').text("25 - Mainra, Rahul");
-                            $('#26').text("26 - Proulx, Normand");
-                            $('#27').text("27 - Yang, Robert");
-                            $('#28').text("28 - Gregor, Laura");
-                            $('#29').text("29 - Hassan, Abubaker");
-                            $('#30').text("30 - Jain, Arsh");
-                            $('#31').text("31 - Joseph, Geena");
-                            $('#32').text("32 - Wyllie, Blair");
-                            $('#33').text("33 - Butan, Radu");
-                            $('#34').text("34 - Weir, Matthew");
-                            $('#35').text("35 - Sultan, Nabil");
-                            $('#36').text("36 - Shamseddin, Mohammad");
-                            $('#37').text("37 - Huang, Susan");
-                            $('#38').text("38 - Mathew, Anna");
-                            $('#39').text("39 - Iyer, Hariharan");
-                            $('#40').text("40 - Elwood, Amanda");
-                            $('#41').text("41 - Lotfy, Khaled");
-                            $('#42').text("42 - Richardson, Bonnie");
-                            $('#43').text("43 - Hildebrand, Ainslie");
-                            $('#44').text("44 - Lam, Ngan");
-                            $('#45').text("45 - Thomson, Benjamin");
-                            $('#46').text("46 - Silva Gomez, Cecilia");
-                            $('#47').text("47 - Hinkkala, Kaarlo");
-                            $('#48').text("48 - Shah, Sachin");
-                            $('#49').text("49 - Acedillo, Rey");
-                            $('#50').text("50 - Burke, Andrew");
-                            $('#51').text("51 - Sekhon, Gurbir");
-                            $('#52').text("52 - Patel, Amit");
-                            $('#53').text("53 - Yohanna, Seychelle");
-                            $('#54').text("54 - Dev, Varun");
-                            $('#55').text("55 - Hemmett, Ioulia");
-                            $('#56').text("56 - Qirjazi, Elena");
-                            $('#57').text("57 - Govind, Mayur");
-                            $('#58').text("58 - Altuwaijri, Wafa");
-                            $('#59').text("59 - Quinn, Kathleen");
-                            $('#60').text("60 - Silverberg, Rory");
-                            $('#61').text("61 - Mann, Shawna");
-                            $('#62').text("62 - Zhu, Justin");
-                            $('#63').text("63 - Al-Zaneen, Gaeth");
-                            $('#64').text("64 - Chiu, Michael");
-                            $('#65').text("65 - Pazhekattu, Rinu");
-                            $('#66').text("66 - Ratner, Shemer");
-                            $('#67').text("67 - Clark, David");
-            
-
-                        }
-                        else if (code == 'sa')
-                        {
-                            $('#picture').attr('src', '200ppi/Sa.png');
-                            $('#name').html(region);
-                            $('#1').text("1 - Al-Hejaili, Fayez");
-                            $('#2').text("2 - Abunijem, Zuhair");
-                            $('#3').text("3 - Housawi, Abdulrahman");
-                            $('#4').text("4 - Al-Shaebi, Fuad");
-                            $('#5').text("5 - Al-Beladi, Fatimah");
-                            $('#6').text("6 - Al-Eid, Hassan");
-                            $('#7').text("7 - Al-Qurashi, Salem");
-                            $('#8').text("8 - Almalki, Abudllah");
-                            $('#9').text("9 - Habhab, Wael");
-                            $('#10').text("10 - Al-Harthi, Majed");
-                            $('#11').text("11 - AlHomayeed, Badr");
-                            $('#12').text("12 - AlMatouq, Basim");
-                            $('#13').text("13 - Hakami, Ali");
-                            $('#14').text("14 - Almalki, Najlaa");
-                            $('#15').text("15 - Zabani, Najla");
-                            $('#16').text("16 - Banamah, Turki");
-                            $('#17').text("17 - Al-Hozali, Hanadi");
-                            $('#18').text("18 - Al-Obaili, Saad");
-                            $('#19').text("19 - Bukhari, Rafat");
-                            $('#20').text("20 - Al-Omi, Mohammed");
-                            $('#21').text("21 - Al Katheeri, Ali");
-                            $('#22').text("22 - Dahlan, Randah");
-                            $('#23').text("23 - Dammas, Hassnah");
-                            $('#24').text("24 - Habibullah, Zainab");
-                            $('#25').text("25 - Kashgary, Abdullah");
-                            $('#26').text("26 - Al Hazmi, Areej");
-                            $('#27').text("27 - Sadagah, Laila");
-                            $('#28').text("28 - Alem, Alaa");
-                            $('#29').text("29 - Alfageeh, Ali");
-                            $('#30').text("30 - Ankawi, Ghada");
-                            $('#31').text("31 - Asiri, Abdullah");
-                            $('#32').text("32 - Khojah, Suhail");
-                            $('#33').text("33 - Alsolami, Enad");
-                            $('#34').text("34 - Baduwaylan, Reem");
-                            $('#35').text("35 - Alhomayani, Faisal");
-                            $('#36').text("36 - Dahlan, Sarah");
-                            $('#37').text("");
-                            $('#38').text("");
-                            $('#39').text("");
-                            $('#40').text("");
-                            $('#41').text("");
-                            $('#42').text("");
-                            $('#43').text("");
-                            $('#44').text("");
-                            $('#45').text("");
-                            $('#46').text("");
-                            $('#47').text("");
-                            $('#48').text("");
-                            $('#49').text("");
-                            $('#50').text("");
-                            $('#51').text("");
-                            $('#52').text("");
-                            $('#53').text("");
-                            $('#54').text("");
-                            $('#55').text("");
-                            $('#56').text("");
-                            $('#57').text("");
-                            $('#58').text("");
-                            $('#59').text("");
-                            $('#60').text("");
-                            $('#61').text("");
-                            $('#62').text("");
-                            $('#63').text("");
-                            $('#64').text("");
-                            $('#65').text("");
-                            $('#66').text("");
-                            $('#67').text("");
-                            
-                        }
-                        else if (code == 'us')
-                        {
-                            
-                        }
-                        $(this).attr("src", newImgSrc);
-                    },
-            });
-            
-            jQuery(document).ready(function() {
-       jQuery('#vmap').vectorMap('set', 'colors', {ca: '#3d2a77', 
-                                                    sa: '#45357a', 
-                                                    us: '#61567c',
-                                                   pa: '#69637a',
-                                                   gb: '#676277',
-                                                   in: '#676277',
-                                                   ua: '#676277',
-                                                   au: '#676277',
-                                                   ae: '#676277',
-                                                   eg: '#676277',
-                                                   kw: '#676277',
-                                                   it: '#676277',
-                                                   hn: '#676277'});
-});
         
         </script>
+        
+        
+        
+        <div class="tableclass">
+        
+        <table class="table" id="datatable">
+
+            
+            <thead>
+                <tr>
+                    <th title="Field #1">Name</th>
+                <th title="Field #2">Where are they now?</th>
+</tr></thead>
+            
+<tbody><tr>
+<td>Bloembergen, Wendy</td>
+<td>Ann Arbor, USA</td>
+</tr>
+<tr>
+<td>Hall, Anne</td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td>Kortas, Claude</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Lefebvre, Jacqueline</td>
+<td>Scarborough, Canada</td>
+</tr>
+<tr>
+<td>Duong, Dung</td>
+<td>Toronto, Canada</td>
+</tr>
+<tr>
+<td>Callaghan, Wayne</td>
+<td>Windsor, Canada</td>
+</tr>
+<tr>
+<td>Tibbles, Lee</td>
+<td>Calgary, Canada</td>
+</tr>
+<tr>
+<td>Vitou, Louise</td>
+<td>Kitchener, Canada</td>
+</tr>
+<tr>
+<td>Gogan, Nessa</td>
+<td>New Brunswick, Canada</td>
+</tr>
+<tr>
+<td>Sharma, Laxmi</td>
+<td>Jaipur, India</td>
+</tr>
+<tr>
+<td>Watson, Paul</td>
+<td>Thunder Bay, Canada</td>
+</tr>
+<tr>
+<td>Moist, Louise</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Cohen, Barry</td>
+<td>Uman, Ukraine</td>
+</tr>
+<tr>
+<td>Kadri, Al</td>
+<td>Windsor, Canada</td>
+</tr>
+<tr>
+<td>McLaughlin, Kevin</td>
+<td>Calgary, Canada</td>
+</tr>
+<tr>
+<td>Bagga, Amit</td>
+<td>Windsor, Canada</td>
+</tr>
+<tr>
+<td>Pandeya, Sanjaya</td>
+<td>Oakville, Canada</td>
+</tr>
+<tr>
+<td>Garg, Amit</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Krepinsky, Joan</td>
+<td>Hamilton, Canada</td>
+</tr>
+<tr>
+<td>Al-Hejaili, Fayez</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Garland, Jocelyn</td>
+<td>Kingston, Canada</td>
+</tr>
+<tr>
+<td>Shahinian, Vahakn</td>
+<td>Michigan, USA</td>
+</tr>
+<tr>
+<td>Suri, Rita</td>
+<td>Montreal, Canada</td>
+</tr>
+<tr>
+<td>Cass, Aaron</td>
+<td>Surrey, Canada</td>
+</tr>
+<tr>
+<td>Rehman, Faisal</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Nesrallah, Gihad</td>
+<td>Toronto, Canada</td>
+</tr>
+<tr>
+<td>Prakash, Suma</td>
+<td>wandering nomad</td>
+</tr>
+<tr>
+<td>Shulman, Tanya</td>
+<td>North Bay, Canada</td>
+</tr>
+<tr>
+<td>Abunijem, Zuhair</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Boudville, Neil</td>
+<td>Perth, Australia</td>
+</tr>
+<tr>
+<td>Housawi, Abdulrahman</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Sharma, Ajay</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Carson, Rachel</td>
+<td>Nanaimo, Canada</td>
+</tr>
+<tr>
+<td>Hanson, Garth</td>
+<td>Peterborough, Canada</td>
+</tr>
+<tr>
+<td>Mainra, Rahul</td>
+<td>Saskatoon, Canada</td>
+</tr>
+<tr>
+<td>Proulx, Normand</td>
+<td>Gatineau, Canada</td>
+</tr>
+<tr>
+<td>Yang, Robert</td>
+<td>Hamilton, Canada</td>
+</tr>
+<tr>
+<td>Arroyo, Rocio</td>
+<td>Panama</td>
+</tr>
+<tr>
+<td>Al-Shaebi, Fuad</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Al-Beladi, Fatimah</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Al-Eid, Hassan</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Gregor, Laura</td>
+<td>Kitchener, Canada</td>
+</tr>
+<tr>
+<td>Hassan, Abubaker</td>
+<td>Saskatoon, Canada</td>
+</tr>
+<tr>
+<td>Al-Qurashi, Salem</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Daniel, Shaji</td>
+<td>Springfield, USA</td>
+</tr>
+<tr>
+<td>Almalki, Abudllah</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Forzley, Brian</td>
+<td>Okanagan, Canada</td>
+</tr>
+<tr>
+<td>Jain, Arsh</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Joseph, Geena</td>
+<td>Renfrew, Canada</td>
+</tr>
+<tr>
+<td>Wyllie, Blair</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Habhab, Wael</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Viggiano, Carlos</td>
+<td>Panama</td>
+</tr>
+<tr>
+<td>Al-Harthi, Majed</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Butan, Radu</td>
+<td>Peterborough, Canada</td>
+</tr>
+<tr>
+<td>Weir, Matthew</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>AlHomayeed, Badr</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>AlMatouq, Basim</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Prabhu, Chaitanya</td>
+<td>Dubai, UAE</td>
+</tr>
+<tr>
+<td>Sultan, Nabil</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Shamseddin, Mohammad</td>
+<td>Kingston, Canada</td>
+</tr>
+<tr>
+<td>Hakami, Ali</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Almalki, Najlaa</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Khedr, Abdelrahman</td>
+<td>Egypt</td>
+</tr>
+<tr>
+<td>Huang, Susan</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Mathew, Anna</td>
+<td>Hamilton, Canada</td>
+</tr>
+<tr>
+<td>Zabani, Najla</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Iyer, Hariharan</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Banamah, Turki</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Al-Hozali, Hanadi</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Al-Obaili, Saad</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Elwood, Amanda</td>
+<td>Regina, Canada</td>
+</tr>
+<tr>
+<td>Lotfy, Khaled</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Richardson, Bonnie</td>
+<td>Regina, Canada</td>
+</tr>
+<tr>
+<td>Bukhari, Rafat</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Al-Omi, Mohammed</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Al Katheeri, Ali</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Dahlan, Randah</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Hildebrand, Ainslie</td>
+<td>Edmonton, Canada</td>
+</tr>
+<tr>
+<td>Lam, Ngan</td>
+<td>Calgary, Canada</td>
+</tr>
+<tr>
+<td>Thomson, Benjamin</td>
+<td>Richmond Hill, Canada</td>
+</tr>
+<tr>
+<td>Silva Gomez, Cecilia</td>
+<td>Mississauga, Canada</td>
+</tr>
+<tr>
+<td>Dammas, Hassnah</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Habibullah, Zainab</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Kashgary, Abdullah</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Hinkkala, Kaarlo</td>
+<td>Thunder Bay, Canada</td>
+</tr>
+<tr>
+<td>Shah, Sachin</td>
+<td>Saskatoon, Canada</td>
+</tr>
+<tr>
+<td>Tomlinson Fowler, Jermaine</td>
+<td>Panama</td>
+</tr>
+<tr>
+<td>Acedillo, Rey</td>
+<td>Thunder Bay, Canada</td>
+</tr>
+<tr>
+<td>Al-Sharekh, Monther</td>
+<td>Kuwait</td>
+</tr>
+<tr>
+<td>Burke, Andrew</td>
+<td>Guelph, Canada</td>
+</tr>
+<tr>
+<td>Sekhon, Gurbir</td>
+<td>Cambridge, Canada</td>
+</tr>
+<tr>
+<td>Al Hazmi, Areej</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Patel, Amit</td>
+<td>Windsor, Canada</td>
+</tr>
+<tr>
+<td>Yohanna, Seychelle</td>
+<td>Hamilton, Canada</td>
+</tr>
+<tr>
+<td>Sadagah, Laila</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Alem, Alaa</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Alfageeh, Ali</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Ankawi, Ghada</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Asiri, Abdullah</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Dev, Varun</td>
+<td>Toronto, Canada</td>
+</tr>
+<tr>
+<td>Hemmett, Ioulia</td>
+<td>Calgary, Canada</td>
+</tr>
+<tr>
+<td>Jaen, Camilo</td>
+<td>Panama</td>
+</tr>
+<tr>
+<td>Khojah, Suhail</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Qirjazi, Elena</td>
+<td>Calgary, Canada</td>
+</tr>
+<tr>
+<td>Govind, Mayur</td>
+<td>Barrie, Canada</td>
+</tr>
+<tr>
+<td>Grant, Claire</td>
+<td>UK</td>
+</tr>
+<tr>
+<td>Altuwaijri, Wafa</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Quinn, Kathleen</td>
+<td>St. Catharines, Canada</td>
+</tr>
+<tr>
+<td>Vanchinathan, Natasha</td>
+<td>Seattle, USA</td>
+</tr>
+<tr>
+<td>Silverberg, Rory</td>
+<td>Thunder Bay, Canada</td>
+</tr>
+<tr>
+<td>Novoa, Nadji</td>
+<td>Panama</td>
+</tr>
+<tr>
+<td>Salerno, Fabio Rosario</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Alsolami, Enad</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Baduwaylan, Reem</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Mann, Shawna</td>
+<td>Vancouver, Canada</td>
+</tr>
+<tr>
+<td>Zhu, Justin</td>
+<td>Oshawa, Canada</td>
+</tr>
+<tr>
+<td>Alhomayani, Faisal</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Al-Zaneen, Gaeth</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Chiu, Michael</td>
+<td>London, Canada</td>
+</tr>
+<tr>
+<td>Gargoum, Arwa</td>
+<td>UK</td>
+</tr>
+<tr>
+<td>Pazhekattu, Rinu</td>
+<td>Ottawa, Canada</td>
+</tr>
+<tr>
+<td>Ratner, Shemer</td>
+<td>Sudbury, Canada</td>
+</tr>
+<tr>
+<td>Clark, David</td>
+<td>Halifax, Canada</td>
+</tr>
+<tr>
+<td>Dahlan, Sarah</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td>Bathini, Lavanya</td>
+<td> </td>
+</tr>
+<tr>
+<td>Cowan, Andrea</td>
+<td> </td>
+</tr>
+<tr>
+<td>Gharib, Elie</td>
+<td> </td>
+</tr>
+<tr>
+<td>Nicholl, David</td>
+<td> </td>
+</tr>
+<tr>
+<td>Schorr, Melissa</td>
+<td> </td>
+</tr>
+<tr>
+<td>Alghamdi, Abdullah</td>
+<td> </td>
+</tr>
+<tr>
+<td>De Chickera, Sonali</td>
+<td> </td>
+</tr>
+<tr>
+<td>Orellana Oviedo, Karla Maria</td>
+<td>Honduras</td>
+</tr>
+<tr>
+<td>Roshanov, Pavel</td>
+<td> </td>
+</tr>
+<tr>
+<td>Zhang, Andy</td>
+<td> </td>
+</tr>
+</tbody></table>
+            
+            
+        </div>   
+        </div>
+        
     </body>
 <html>
