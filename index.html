@@ -6,7 +6,7 @@
 
     <title>Alumni Map</title>
 
-    <link rel="stylesheet" type="text/css" href="style.scss" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <link href="jqvmap.css" rel="stylesheet" />
     <link href="bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="jquery.min.js"></script>
@@ -44,6 +44,25 @@
       <h2 class="sublogo">NEPHROLOGY DIVISION ALUMNI MAP</h2>
     </header>
 
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
+
     <script type="text/javascript">
       $(document).ready(function () {
         $("#datatable1").dataTable();
@@ -75,27 +94,6 @@
     </script>
 
     <div class="major">
-      <script>
-        function openCity(evt, cityName) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-          tablinks = document.getElementsByClassName("tablinks");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(
-              " active",
-              ""
-            );
-          }
-          document.getElementById(cityName).style.display = "block";
-          evt.currentTarget.className += " active";
-        }
-
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-      </script>
       <section id="hero">
         <div class="row mainRow">
           <div class="col">
