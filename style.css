@@ -131,8 +131,6 @@ body {
   cursor: pointer;
   padding: 14px 16px;
   font-size: 17px;
-  width: auto;
-  display: block;
   border-radius: 12px;
   margin-right: 12px;
   transition: 0.3s;
