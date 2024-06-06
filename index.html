@@ -1,797 +1,937 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
     <title>Alumni Map</title>
-    
-    <link href="jqvmap.css" rel="stylesheet"/>
-    <link href="bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="jquery.min.js"></script>                                               
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.21/r-2.2.5/datatables.min.css"/>
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/r-2.2.5/datatables.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    
-</head>
-    
-         <style>
-        
-        body{
-            font-family: "Poppins", Arial, sans-serif;
-            max-width: 100%;
-            background: white;
-            
-            }
-        
-                 
-        #header {
-              background: #ffffff;
-              z-index: 997;
-              padding-top: 40px;
-              max-width: 100%;
-              margin: 0 80px 40px 80px;
 
-            }
+    <link rel="stylesheet" type="text/css" href="style.scss" />
+    <link href="jqvmap.css" rel="stylesheet" />
+    <link href="bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="jquery.min.js"></script>
 
-            #header.header-scrolled {
-              box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-              padding: 12px;
-            }
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/v/bs4/dt-1.10.21/r-2.2.5/datatables.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/v/bs4/dt-1.10.21/r-2.2.5/datatables.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+  </head>
 
-            #header .logo {
-              font-size: 32px;
-              font-weight: 350;
-              letter-spacing: 0.5px;
-              color: #482c7e;
+  <body>
+    <header id="header">
+      <h1>
+        <img id="Headerlogo" src="Headerlogo.jpg" width="60" height="60" /><span
+          class="logo"
+          >Schulich School of Medicine & Dentistry</span
+        >
+      </h1>
+      <h2 class="sublogo">NEPHROLOGY DIVISION ALUMNI MAP</h2>
+    </header>
 
-            }
-             
-              #header .sublogo {
-              margin-left: 70px;
-              margin-top: -16px;
-              font-size: 20px;
-              font-weight: 700;
-              letter-spacing: 2px;
-              color: #482c7e;
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#datatable1").dataTable();
+      });
+    </script>
 
-             }
-                 
-                 
-            #hero {
-              padding-top: 82px;
-            }
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#datatable2").dataTable();
+      });
+    </script>
 
-            #hero h1 {
-              font-size: 48px;
-              font-weight: 700;
-              line-height: 56px;
-              color: #ffffff;
-            }
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#datatable3").dataTable();
+      });
+    </script>
 
-            #hero h2 {
-              color: whitesmoke;
-              margin: 10px 0  30px 0;
-              font-size: 20px;
-            }
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#datatable4").dataTable();
+      });
+    </script>
 
-            #hero h3 {
-            
-            text-decoration: none;
-              color: whitesmoke;
-              margin: 10px 0  30px 0;
-              font-size: 20px;
-            }
-             
-             .main{
-                 margin: auto;
-                 max-width: 90%;
-             }
-             
-             .major{
-                 margin: auto;
-                 max-width: 90%;
-                 background: rgb(149,10,203);
-                 background: linear-gradient(90deg, rgba(149,10,203,0.9) 0%, rgba(122,116,158,0.9) 100%);
-        
-                 -webkit-box-shadow: 0px -4px 74px -40px rgba(0,0,0,0.74);
-                -moz-box-shadow: 0px -4px 74px -40px rgba(0,0,0,0.74);
-                 box-shadow: 0px -4px 74px -40px rgba(0,0,0,0.74);
-                 border-radius: 30px 30px 0 0;
-                    
-             }
-             
-             .alumni{
-                 margin: auto;
-                 max-width: 90%;
-             }
-             
-             #name {
-                 margin-top: 12px;
-                 margin-left: 14px;
-             }
-             
-             #picture{
-                 margin-left: 14px;
-             }
-             
-             .tableclass{
-                 margin: auto;
-                 max-width: 88%;
-                 background: white;
-                 padding: 20px;
-                 border-radius: 0px 0px 0 0;
-             }
-             
-             #line{
-                 color: black;
-                 width: 100%;
-                 height: 1px;
-                 margin-top: 12px;
-             }
-             
-             .names{
-                 margin-left: 14px;
-                 font-weight: 100;
-             }
-                       
-        .map{
-            padding-bottom: 80px;
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#datatable5").dataTable();
+      });
+    </script>
+
+    <div class="major">
+      <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(
+              " active",
+              ""
+            );
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
         }
-        
-    </style>
-    
-    <body>
-        <header id="header">
-        <h1><img id="Headerlogo" src="Headerlogo.jpg" width="60" height="60"><span class="logo"> Schulich School of Medicine & Dentistry</span> </h1>
-            <h2 class="sublogo">NEPHROLOGY DIVISION ALUMNI MAP</h2>
 
-        </header>
-          
-    <div class="major">    
-        <section id="hero">
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+      </script>
+      <section id="hero">
+        <div class="row mainRow">
+          <div class="col">
+            <h1>Where are they now?</h1>
+            <h2>Learn where our recent graduates are below!</h2>
+            <!-- Tab links -->
+            <div class="tab">
+              <button class="tablinks" onclick="openCity(event, 'All')">
+                All Graduates
+              </button>
+              <button
+                class="tablinks"
+                onclick="openCity(event, '2023')"
+                id="defaultOpen"
+              >
+                2023
+              </button>
+              <button class="tablinks" onclick="openCity(event, '2022')">
+                2022
+              </button>
+              <button class="tablinks" onclick="openCity(event, '2021')">
+                2021
+              </button>
+              <button class="tablinks" onclick="openCity(event, '2020')">
+                2020
+              </button>
+            </div>
 
-              <div class="row main">
-                <div class="col">
-                  <h1>Our alumni are all over the world!</h1>
-                  <h2>Hover and click a pin  to see the alumni.</h2>
-                  <a href="encrypted.html"><h3>Articles <i class="fas fa-external-link-alt"></i></h3></a>
-                </div>
-                <div class="col map">
-                <iframe src="https://fortress.maptive.com/ver4/56957bd5d6d537f4c91c13d7c0c1a1a3" frameborder="5" framecolor="white" width="100%" height="500" allow="geolocation"></iframe>
-                </div>
+            <!-- Tab content -->
+            <div id="2023" class="tabcontent">
+              <div class="tableclass">
+                <table class="table" id="datatable1">
+                  <thead>
+                    <tr>
+                      <th title="Field #1">Name</th>
+                      <th title="Field #2">Where are they now?</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>Yasaman Torabi</td>
+                      <td>Saskatoon, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Adam Bloom</td>
+                      <td>Nanaimo, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Nada Bashnini</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Pauline Kosalka</td>
+                      <td>Sudbury, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Saeed Abumelha</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Faisal Shahwan</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
+            </div>
 
-        </section>
-        
-        
-        <script type="text/javascript">
-        $(document).ready(function () {
-            $('#datatable').dataTable();
-        });
-        
-        
-        </script>
-        
-        
-        
-        <div class="tableclass">
-        
-        <table class="table" id="datatable">
+            <div id="2022" class="tabcontent">
+              <div class="tableclass">
+                <table class="table" id="datatable2">
+                  <thead>
+                    <tr>
+                      <th title="Field #1">Name</th>
+                      <th title="Field #2">Where are they now?</th>
+                    </tr>
+                  </thead>
 
-            
-            <thead>
-                <tr>
-                    <th title="Field #1">Name</th>
-                <th title="Field #2">Where are they now?</th>
-</tr></thead>
-            
-<tbody>
-    <tr>
-        <td>Altuwaijri, Wafas</td>
-        <td>Dammam, Saudi Arabia</td>
-    </tr>
-    <tr>
-        <td>Sohail, Qazi Zain</td>
-        <td>Kitchener, Canada</td>
-    </tr>
-    <tr>
-        <td>Mondhe, Suhas</td>
-        <td>Pune, India</td>
-    </tr>
-    <tr>
-        <td>al Moaigel, Hala</td>
-        <td>Dammam, Saudi Arabia</td>
-    </tr>
-    <tr>
-        <td>Alshehri, Fahadn</td>
-        <td>Riyadh, Saudi Arabia</td>
-    </tr>
+                  <tbody>
+                    <tr>
+                      <td>Carol Wang</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Qazi Zain Sohail</td>
+                      <td>Kitchener, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Fahadn Alshehri</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Hala al Moaigel</td>
+                      <td>Dammam, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Sonali De Chickera</td>
+                      <td>Montreal, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Zeyana Al-Hadhrami</td>
+                      <td>Oman</td>
+                    </tr>
+                    <tr>
+                      <td>Gaeth Al-Zaneen</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Suhas Mondhe</td>
+                      <td>Pune, India</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
-    <tr>
-        <td>Al-Hadhrami, Zeyana</td>
-        <td>Oman</td>
-    </tr>
-       <tr>
-        <td>Wang, Carol</td>
-        <td>London, Canada</td>
-    </tr>
-    <tr>
-        <td>Nicholl, David</td>
-        <td>Kamloops, Canada</td>
-    </tr>
-    <tr>
-        <td>Schorr, Melissa</td>
-        <td>Calgary, Canada</td>
-    </tr> 
-    <tr>
-        <td>Orellana, Karla</td>
-        <td>Honduras</td>
-    </tr> 
-    <tr>
-        <td>Pazhekattu, Rinu</td>
-        <td>Ottawa, Canada</td>
-    </tr> 
-    <tr>
-        <td>Dahlan, Sarah</td>
-        <td>Jeddah, Saudi Arabia</td>
-    </tr> 
-    <tr>
-        <td>Cowan, Andrea</td>
-        <td>London, Canada</td>
-    </tr> 
-    <tr>
-        <td>Gharib, Elie</td>
-        <td>London, Canada</td>
-    </tr>     
-<tr>
-<td>Bloembergen, Wendy</td>
-<td>Ann Arbor, USA</td>
-</tr>
-<tr>
-<td>Hall, Anne</td>
-<td>Unknown</td>
-</tr>
-<tr>
-<td>Kortas, Claude</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Lefebvre, Jacqueline</td>
-<td>Scarborough, Canada</td>
-</tr>
-<tr>
-<td>Duong, Dung</td>
-<td>Toronto, Canada</td>
-</tr>
-<tr>
-<td>Callaghan, Wayne</td>
-<td>Windsor, Canada</td>
-</tr>
-<tr>
-<td>Tibbles, Lee</td>
-<td>Calgary, Canada</td>
-</tr>
-<tr>
-<td>Vitou, Louise</td>
-<td>Kitchener, Canada</td>
-</tr>
-<tr>
-<td>Gogan, Nessa</td>
-<td>New Brunswick, Canada</td>
-</tr>
-<tr>
-<td>Sharma, Laxmi</td>
-<td>Jaipur, India</td>
-</tr>
-<tr>
-<td>Watson, Paul</td>
-<td>Thunder Bay, Canada</td>
-</tr>
-<tr>
-<td>Moist, Louise</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Cohen, Barry</td>
-<td>Winnipeg</td>
-</tr>
-<tr>
-<td>Kadri, Al</td>
-<td>Windsor, Canada</td>
-</tr>
-<tr>
-<td>McLaughlin, Kevin</td>
-<td>Calgary, Canada</td>
-</tr>
-<tr>
-<td>Bagga, Amit</td>
-<td>Windsor, Canada</td>
-</tr>
-<tr>
-<td>Pandeya, Sanjaya</td>
-<td>Oakville, Canada</td>
-</tr>
-<tr>
-<td>Garg, Amit</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Krepinsky, Joan</td>
-<td>Hamilton, Canada</td>
-</tr>
-<tr>
-<td>Al-Hejaili, Fayez</td>
-<td>Riyadh, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Garland, Jocelyn</td>
-<td>Kingston, Canada</td>
-</tr>
-<tr>
-<td>Shahinian, Vahakn</td>
-<td>Michigan, USA</td>
-</tr>
-<tr>
-<td>Suri, Rita</td>
-<td>Montreal, Canada</td>
-</tr>
-<tr>
-<td>Cass, Aaron</td>
-<td>Surrey, Canada</td>
-</tr>
-<tr>
-<td>Rehman, Faisal</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Nesrallah, Gihad</td>
-<td>Toronto, Canada</td>
-</tr>
-<tr>
-<td>Prakash, Suma</td>
-<td>Rochester, USA</td>
-</tr>
-<tr>
-<td>Shulman, Tanya</td>
-<td>North Bay, Canada</td>
-</tr>
-<tr>
-<td>Abunijem, Zuhair</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Boudville, Neil</td>
-<td>Perth, Australia</td>
-</tr>
-<tr>
-<td>Housawi, Abdulrahman</td>
-<td>Dammam, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Sharma, Ajay</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Carson, Rachel</td>
-<td>Nanaimo, Canada</td>
-</tr>
-<tr>
-<td>Hanson, Garth</td>
-<td>Peterborough, Canada</td>
-</tr>
-<tr>
-<td>Mainra, Rahul</td>
-<td>Saskatoon, Canada</td>
-</tr>
-<tr>
-<td>Proulx, Normand</td>
-<td>Gatineau, Canada</td>
-</tr>
-<tr>
-<td>Yang, Robert</td>
-<td>Hamilton, Canada</td>
-</tr>
-<tr>
-<td>Arroyo, Rocio</td>
-<td>Panama</td>
-</tr>
-<tr>
-<td>Al-Shaebi, Fuad</td>
-<td>Yanbu, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Al-Beladi, Fatimah</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Al-Eid, Hassan</td>
-<td>Riyadh, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Gregor, Laura</td>
-<td>Kitchener, Canada</td>
-</tr>
-<tr>
-<td>Hassan, Abubaker</td>
-<td>Saskatoon, Canada</td>
-</tr>
-<tr>
-<td>Al-Qurashi, Salem</td>
-<td>Riyadh, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Daniel, Shaji</td>
-<td>Springfield, Massachusetts, USA</td>
-</tr>
-<tr>
-<td>Almalki, Abudllah</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Forzley, Brian</td>
-<td>Okanagan, Canada</td>
-</tr>
-<tr>
-<td>Jain, Arsh</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Joseph, Geena</td>
-<td>Renfrew, Canada</td>
-</tr>
-<tr>
-<td>Wyllie, Blair</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Habhab, Wael</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Viggiano, Carlos</td>
-<td>Panama</td>
-</tr>
-<tr>
-<td>Al-Harthi, Majed</td>
-<td>Riyadh, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Butan, Radu</td>
-<td>Peterborough, Canada</td>
-</tr>
-<tr>
-<td>Weir, Matthew</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>AlHomayeed, Badr</td>
-<td>Medina Munawara, Saudi Arabia</td>
-</tr>
-<tr>
-<td>AlMatouq, Basim</td>
-<td>Riyadh, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Prabhu, Chaitanya</td>
-<td>Dubai, UAE</td>
-</tr>
-<tr>
-<td>Sultan, Nabil</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Shamseddin, Mohammad</td>
-<td>Kingston, Canada</td>
-</tr>
-<tr>
-<td>Hakami, Ali</td>
-<td>Riyadh, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Almalki, Najlaa</td>
-<td>Taif, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Khedr, Abdelrahman</td>
-<td>Egypt</td>
-</tr>
-<tr>
-<td>Huang, Susan</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Mathew, Anna</td>
-<td>Hamilton, Canada</td>
-</tr>
-<tr>
-<td>Zabani, Najla</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Iyer, Hariharan</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Banamah, Turki</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Al-Hozali, Hanadi</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Al-Obaili, Saad</td>
-<td>Riyadh, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Elwood, Amanda</td>
-<td>Regina, Canada</td>
-</tr>
-<tr>
-<td>Lotfy, Khaled</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Richardson, Bonnie</td>
-<td>Regina, Canada</td>
-</tr>
-<tr>
-<td>Bukhari, Rafat</td>
-<td>Riyadh, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Al-Omi, Mohammed</td>
-<td>Riyadh, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Al Katheeri, Ali</td>
-<td>Makkah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Dahlan, Randah</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Hildebrand, Ainslie</td>
-<td>Edmonton, Canada</td>
-</tr>
-<tr>
-<td>Lam, Ngan</td>
-<td>Calgary, Canada</td>
-</tr>
-<tr>
-<td>Thomson, Benjamin</td>
-<td>Richmond Hill, Canada</td>
-</tr>
-<tr>
-<td>Silva Gomez, Cecilia</td>
-<td>Mississauga, Canada</td>
-</tr>
-<tr>
-<td>Dammas, Hassnah</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Habibullah, Zainab</td>
-<td>Mecca, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Kashgary, Abdullah</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Hinkkala, Kaarlo</td>
-<td>Thunder Bay, Canada</td>
-</tr>
-<tr>
-<td>Shah, Sachin</td>
-<td>Saskatoon, Canada</td>
-</tr>
-<tr>
-<td>Tomlinson Fowler, Jermaine</td>
-<td>Panama</td>
-</tr>
-<tr>
-<td>Acedillo, Rey</td>
-<td>Thunder Bay, Canada</td>
-</tr>
-<tr>
-<td>Al-Sharekh, Monther</td>
-<td>Kuwait</td>
-</tr>
-<tr>
-<td>Burke, Andrew</td>
-<td>Guelph, Canada</td>
-</tr>
-<tr>
-<td>Sekhon, Gurbir</td>
-<td>Cambridge, Canada</td>
-</tr>
-<tr>
-<td>Al Hazmi, Areej</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Patel, Amit</td>
-<td>Windsor, Canada</td>
-</tr>
-<tr>
-<td>Yohanna, Seychelle</td>
-<td>Hamilton, Canada</td>
-</tr>
-<tr>
-<td>Sadagah, Laila</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Alem, Alaa</td>
-<td>Madinah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Alfageegh, Ali</td>
-<td>Abha, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Ankawi, Ghada</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Asiri, Abdullah</td>
-<td>Abha, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Dev, Varun</td>
-<td>Toronto, Canada</td>
-</tr>
-<tr>
-<td>Hemmett, Ioulia</td>
-<td>Calgary, Canada</td>
-</tr>
-<tr>
-<td>Jaen, Camilo</td>
-<td>Panama</td>
-</tr>
-<tr>
-<td>Khojah, Suhail</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Qirjazi, Elena</td>
-<td>Calgary, Canada</td>
-</tr>
-<tr>
-<td>Govind, Mayur</td>
-<td>Barrie, Canada</td>
-</tr>
-<tr>
-<td>Grant, Claire</td>
-<td>UK</td>
-</tr>
-<tr>
-<td>Quinn, Kathleen</td>
-<td>St. Catharines, Canada</td>
-</tr>
-<tr>
-<td>Vanchinathan, Natasha</td>
-<td>Seattle, USA</td>
-</tr>
-<tr>
-<td>Silverberg, Rory</td>
-<td>Thunder Bay, Canada</td>
-</tr>
-<tr>
-<td>Novoa, Nadji</td>
-<td>Panama</td>
-</tr>
-<tr>
-<td>Salerno, Fabio Rosario</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Alsolami, Enad</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Baduwaylan, Reem</td>
-<td>Mecca, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Mann, Shawna</td>
-<td>Penticton, Canada</td>
-</tr>
-<tr>
-<td>Zhu, Justin</td>
-<td>Oshawa, Canada</td>
-</tr>
-<tr>
-<td>Alhomayani, Faisal</td>
-<td>Taif, Saudi Arabia</td>
-</tr>
-<tr>
-<td>Al-Zaneen, Gaeth</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Chiu, Michael</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Gargoum, Arwa</td>
-<td>Regina, Canada</td>
-</tr>
-<tr>
-<td>Ratner, Shemer</td>
-<td>Sudbury, Canada</td>
-</tr>
-<tr>
-<td>Clark, David</td>
-<td>Halifax, Canada</td>
-</tr>
-<tr>
-<td>Bathini, Lavanya</td>
-<td>Edmonton, Canada</td>
-</tr>
-<tr>
-<td>Alghamdi, Abdullah</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-<tr>
-<td>De Chickera, Sonali</td>
-<td>Montreal, Canada</td>
-</tr>
-<tr>
-<td>Roshanov, Pavel</td>
-<td>London, Canada</td>
-</tr>
-<tr>
-<td>Zhang, Andy</td>
-<td>Scarborough, Canada</td>
-</tr>
-<tr>
-<td>Alkandari, Abdulrahman</td>
-<td>Kuwait</td>
-</tr>
-<tr>
-    <td>Ashour, Omar</td>
-    <td>Jeddah, Saudi Arabia</td>
-    </tr>
-    <tr>
-<td>Abumelha, Saeed</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
+            <div id="2021" class="tabcontent">
+              <div class="tableclass">
+                <table class="table" id="datatable3">
+                  <thead>
+                    <tr>
+                      <th title="Field #1">Name</th>
+                      <th title="Field #2">Where are they now?</th>
+                    </tr>
+                  </thead>
 
-      <tr>
-<td>Shahwan, Faisal</td>
-<td>Riyadh, Saudi Arabia</td>
-</tr>
+                  <tbody>
+                    <tr>
+                      <td>Andy Zhang</td>
+                      <td>Scarborough, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Pavel Roshanov</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Abdulrahman Alkandari</td>
+                      <td>Kuwait</td>
+                    </tr>
+                    <tr>
+                      <td>Andrea Cowan</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Omar Ashour</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Michael Chiu</td>
+                      <td>London, Canada</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
-      <tr>
-<td>Bloom, Adam</td>
-<td>Nanaimo, Canada</td>
-</tr>
+            <div id="2020" class="tabcontent">
+              <div class="tableclass">
+                <table class="table" id="datatable4">
+                  <thead>
+                    <tr>
+                      <th title="Field #1">Name</th>
+                      <th title="Field #2">Where are they now?</th>
+                    </tr>
+                  </thead>
 
-      <tr>
-<td>Torabi, Yasaman</td>
-<td>Saskatoon, Canada</td>
-</tr>
+                  <tbody>
+                    <tr>
+                      <td>David Nicholl</td>
+                      <td>Kamloops, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Elie Gharib</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Lavanya Bathini</td>
+                      <td>Edmonton, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Melissa Schorr</td>
+                      <td>Calgary, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Karla Orellana</td>
+                      <td>Honduras</td>
+                    </tr>
+                    <tr>
+                      <td>Abdullah Alghamdi</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Wafas Altuwaijri</td>
+                      <td>Dammam, Saudi Arabia</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
-      <tr>
-<td>Kosalka, Pauline</td>
-<td>Sudbury, Canada</td>
-</tr>
+            <div id="All" class="tabcontent">
+              <div class="tableclass">
+                <table class="table" id="datatable5">
+                  <thead>
+                    <tr>
+                      <th title="Field #1">Name</th>
+                      <th title="Field #2">Where are they now?</th>
+                    </tr>
+                  </thead>
 
-      <tr>
-<td>Bashnini, Nada</td>
-<td>Jeddah, Saudi Arabia</td>
-</tr>
-</tbody></table>
-            
-            
-        </div>   
+                  <tbody>
+                    <tr>
+                      <td>Wafas Altuwaijri</td>
+                      <td>Dammam, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Qazi Zain Sohail</td>
+                      <td>Kitchener, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Suhas Mondhe</td>
+                      <td>Pune, India</td>
+                    </tr>
+                    <tr>
+                      <td>Hala al Moaigel</td>
+                      <td>Dammam, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Fahadn Alshehri</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Zeyana Al-Hadhrami</td>
+                      <td>Oman</td>
+                    </tr>
+                    <tr>
+                      <td>Carol Wang</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>David Nicholl</td>
+                      <td>Kamloops, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Melissa Schorr</td>
+                      <td>Calgary, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Karla Orellana</td>
+                      <td>Honduras</td>
+                    </tr>
+                    <tr>
+                      <td>Rinu Pazhekattu</td>
+                      <td>Ottawa, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Sarah Dahlan</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Andrea Cowan</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Elie Gharib</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Wendy Bloembergen</td>
+                      <td>Ann Arbor, USA</td>
+                    </tr>
+                    <tr>
+                      <td>Anne Hall</td>
+                      <td>Unknown</td>
+                    </tr>
+                    <tr>
+                      <td>Claude Kortas</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Jacqueline Lefebvre</td>
+                      <td>Scarborough, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Dung Duong</td>
+                      <td>Toronto, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Wayne Callaghan</td>
+                      <td>Windsor, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Lee Tibbles</td>
+                      <td>Calgary, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Louise Vitou</td>
+                      <td>Kitchener, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Nessa Gogan</td>
+                      <td>New Brunswick, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Laxmi Sharma</td>
+                      <td>Jaipur, India</td>
+                    </tr>
+                    <tr>
+                      <td>Paul Watson</td>
+                      <td>Thunder Bay, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Louise Moist</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Barry Cohen</td>
+                      <td>Winnipeg</td>
+                    </tr>
+                    <tr>
+                      <td>Al Kadri</td>
+                      <td>Windsor, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Kevin McLaughlin</td>
+                      <td>Calgary, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Amit Bagga</td>
+                      <td>Windsor, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Sanjaya Pandeya</td>
+                      <td>Oakville, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Amit Garg</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Joan Krepinsky</td>
+                      <td>Hamilton, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Fayez Al-Hejaili</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Jocelyn Garland</td>
+                      <td>Kingston, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Vahakn Shahinian</td>
+                      <td>Michigan, USA</td>
+                    </tr>
+                    <tr>
+                      <td>Rita Suri</td>
+                      <td>Montreal, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Aaron Cass</td>
+                      <td>Surrey, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Faisal Rehman</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Gihad Nesrallah</td>
+                      <td>Toronto, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Suma Prakash</td>
+                      <td>Rochester, USA</td>
+                    </tr>
+                    <tr>
+                      <td>Tanya Shulman</td>
+                      <td>North Bay, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Zuhair Abunijem</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Neil Boudville</td>
+                      <td>Perth, Australia</td>
+                    </tr>
+                    <tr>
+                      <td>Abdulrahman Housawi</td>
+                      <td>Dammam, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Ajay Sharma</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Rachel Carson</td>
+                      <td>Nanaimo, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Garth Hanson</td>
+                      <td>Peterborough, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Rahul Mainra</td>
+                      <td>Saskatoon, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Normand Proulx</td>
+                      <td>Gatineau, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Robert Yang</td>
+                      <td>Hamilton, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Rocio Arroyo</td>
+                      <td>Panama</td>
+                    </tr>
+                    <tr>
+                      <td>Fuad Al-Shaebi</td>
+                      <td>Yanbu, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Fatimah Al-Beladi</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Hassan Al-Eid</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Laura Gregor</td>
+                      <td>Kitchener, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Abubaker Hassan</td>
+                      <td>Saskatoon, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Salem Al-Qurashi</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Shaji Daniel</td>
+                      <td>Springfield, Massachusetts, USA</td>
+                    </tr>
+                    <tr>
+                      <td>Abudllah Almalki</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Brian Forzley</td>
+                      <td>Okanagan, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Arsh Jain</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Geena Joseph</td>
+                      <td>Renfrew, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Blair Wyllie</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Wael Habhab</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Carlos Viggiano</td>
+                      <td>Panama</td>
+                    </tr>
+                    <tr>
+                      <td>Majed Al-Harthi</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Radu Butan</td>
+                      <td>Peterborough, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Matthew Weir</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Badr AlHomayeed</td>
+                      <td>Medina Munawara, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Basim AlMatouq</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Chaitanya Prabhu</td>
+                      <td>Dubai, UAE</td>
+                    </tr>
+                    <tr>
+                      <td>Nabil Sultan</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Mohammad Shamseddin</td>
+                      <td>Kingston, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Ali Hakami</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Najlaa Almalki</td>
+                      <td>Taif, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Abdelrahman Khedr</td>
+                      <td>Egypt</td>
+                    </tr>
+                    <tr>
+                      <td>Susan Huang</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Anna Mathew</td>
+                      <td>Hamilton, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Najla Zabani</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Hariharan Iyer</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Turki Banamah</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Hanadi Al-Hozali</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Saad Al-Obaili</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Amanda Elwood</td>
+                      <td>Regina, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Khaled Lotfy</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Bonnie Richardson</td>
+                      <td>Regina, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Rafat Bukhari</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Mohammed Al-Omi</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Ali Al Katheeri</td>
+                      <td>Makkah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Randah Dahlan</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Ainslie Hildebrand</td>
+                      <td>Edmonton, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Ngan Lam</td>
+                      <td>Calgary, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Benjamin Thomson</td>
+                      <td>Richmond Hill, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Cecilia Silva Gomez</td>
+                      <td>Mississauga, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Hassnah Dammas</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Zainab Habibullah</td>
+                      <td>Mecca, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Abdullah Kashgary</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Kaarlo Hinkkala</td>
+                      <td>Thunder Bay, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Sachin Shah</td>
+                      <td>Saskatoon, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Jermaine Tomlinson Fowler</td>
+                      <td>Panama</td>
+                    </tr>
+                    <tr>
+                      <td>Rey Acedillo</td>
+                      <td>Thunder Bay, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Monther Al-Sharekh</td>
+                      <td>Kuwait</td>
+                    </tr>
+                    <tr>
+                      <td>Andrew Burke</td>
+                      <td>Guelph, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Gurbir Sekhon</td>
+                      <td>Cambridge, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Areej Al Hazmi</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Amit Patel</td>
+                      <td>Windsor, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Seychelle Yohanna</td>
+                      <td>Hamilton, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Laila Sadagah</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Alaa Alem</td>
+                      <td>Madinah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Ali Alfageegh</td>
+                      <td>Abha, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Ghada Ankawi</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Abdullah Asiri</td>
+                      <td>Abha, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Varun Dev</td>
+                      <td>Toronto, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Ioulia Hemmett</td>
+                      <td>Calgary, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Camilo Jaen</td>
+                      <td>Panama</td>
+                    </tr>
+                    <tr>
+                      <td>Suhail Khojah</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Elena Qirjazi</td>
+                      <td>Calgary, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Mayur Govind</td>
+                      <td>Barrie, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Claire Grant</td>
+                      <td>UK</td>
+                    </tr>
+                    <tr>
+                      <td>Kathleen Quinn</td>
+                      <td>St. Catharines, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Natasha Vanchinathan</td>
+                      <td>Seattle, USA</td>
+                    </tr>
+                    <tr>
+                      <td>Rory Silverberg</td>
+                      <td>Thunder Bay, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Nadji Novoa</td>
+                      <td>Panama</td>
+                    </tr>
+                    <tr>
+                      <td>Fabio Rosario Salerno</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Enad Alsolami</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Reem Baduwaylan</td>
+                      <td>Mecca, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Shawna Mann</td>
+                      <td>Penticton, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Justin Zhu</td>
+                      <td>Oshawa, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Faisal Alhomayani</td>
+                      <td>Taif, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Gaeth Al-Zaneen</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Michael Chiu</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Arwa Gargoum</td>
+                      <td>Regina, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Shemer Ratner</td>
+                      <td>Sudbury, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>David Clark</td>
+                      <td>Halifax, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Lavanya Bathini</td>
+                      <td>Edmonton, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Abdullah Alghamdi</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Sonali De Chickera</td>
+                      <td>Montreal, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Pavel Roshanov</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Andy Zhang</td>
+                      <td>Scarborough, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Abdulrahman Alkandari</td>
+                      <td>Kuwait</td>
+                    </tr>
+                    <tr>
+                      <td>Omar Ashour</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Saeed Abumelha</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Faisal Shahwan</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Adam Bloom</td>
+                      <td>Nanaimo, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Yasaman Torabi</td>
+                      <td>Saskatoon, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Pauline Kosalka</td>
+                      <td>Sudbury, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Nada Bashnini</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
-        
-    </body>
-<html>
+      </section>
+
+      <div class="major">
+        <section id="hero">
+          <div class="row main">
+            <div class="col">
+              <h1>Our alumni are all over the world!</h1>
+              <h2>Hover and click a pin to see the alumni.</h2>
+              <a href="encrypted.html"
+                ><h3>Articles <i class="fas fa-external-link-alt"></i></h3
+              ></a>
+            </div>
+          </div>
+
+          <div class="col map">
+            <iframe
+              src="https://fortress.maptive.com/ver4/56957bd5d6d537f4c91c13d7c0c1a1a3"
+              frameborder="5"
+              framecolor="white"
+              width="100%"
+              height="500"
+              allow="geolocation"
+            ></iframe>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
