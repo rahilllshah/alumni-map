@@ -74,6 +74,12 @@
       });
     </script>
 
+<script>
+  $(document).ready(function () {
+    $("#datatable6").dataTable();
+  });
+</script>
+
     <div class="major">
       <section id="hero">
         <div class="row mainRow">
@@ -87,9 +93,12 @@
               </button>
               <button
                 class="tablinks"
-                onclick="openCity(event, '2023')"
+                onclick="openCity(event, '2024')"
                 id="defaultOpen"
               >
+                2024
+              </button>
+              <button class="tablinks" onclick="openCity(event, '2023')">
                 2023
               </button>
               <button class="tablinks" onclick="openCity(event, '2022')">
@@ -104,9 +113,55 @@
             </div>
 
             <!-- Tab content -->
-            <div id="2023" class="tabcontent">
+
+            <div id="2024" class="tabcontent"></div>
               <div class="tableclass">
                 <table class="table" id="datatable1">
+                  <thead>
+                    <tr>
+                      <th title="Field #1">Name</th>
+                      <th title="Field #2">Where are they now?</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>Zhubo Zhang</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Joey Cheng-Wei Liu</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Abdulaziz Bari</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Mohammad Ali Faraz</td>
+                      <td>Brampton, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Omar Assiri</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Dilraj Sanghera</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Gustavo Olaciregui Carrera</td>
+                      <td>David City, Panama</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+            <div id="2023" class="tabcontent">
+              <div class="tableclass">
+                <table class="table" id="datatable2">
                   <thead>
                     <tr>
                       <th title="Field #1">Name</th>
@@ -124,12 +179,12 @@
                       <td>Nanaimo, Canada</td>
                     </tr>
                     <tr>
-                      <td>Fawaz Alanazi- Al Jouf</td>
+                      <td>Fawaz Alanazi</td>
                       <td>Saudi Arabia</td>
                     </tr>
                     <tr>
                       <td>Mohammad Bukhari</td>
-                      <td>London</td>
+                      <td>Jeddah, Saudi Arabia</td>
                     </tr>
                   </tbody>
                 </table>
@@ -138,7 +193,7 @@
 
             <div id="2022" class="tabcontent">
               <div class="tableclass">
-                <table class="table" id="datatable2">
+                <table class="table" id="datatable3">
                   <thead>
                     <tr>
                       <th title="Field #1">Name</th>
@@ -149,7 +204,7 @@
                   <tbody>
                     <tr>
                       <td>Carol Wang</td>
-                      <td>London, Canada</td>
+                      <td>Alberta, Canada</td>
                     </tr>
                     <tr>
                       <td>Qazi Zain Sohail</td>
@@ -178,7 +233,7 @@
 
             <div id="2021" class="tabcontent">
               <div class="tableclass">
-                <table class="table" id="datatable3">
+                <table class="table" id="datatable4">
                   <thead>
                     <tr>
                       <th title="Field #1">Name</th>
@@ -206,7 +261,7 @@
 
             <div id="2020" class="tabcontent">
               <div class="tableclass">
-                <table class="table" id="datatable4">
+                <table class="table" id="datatable5">
                   <thead>
                     <tr>
                       <th title="Field #1">Name</th>
@@ -246,7 +301,7 @@
 
             <div id="All" class="tabcontent">
               <div class="tableclass">
-                <table class="table" id="datatable5">
+                <table class="table" id="datatable6">
                   <thead>
                     <tr>
                       <th title="Field #1">Name</th>
@@ -281,7 +336,7 @@
                     </tr>
                     <tr>
                       <td>Carol Wang</td>
-                      <td>London, Canada</td>
+                      <td>Alberta, Canada</td>
                     </tr>
                     <tr>
                       <td>David Nicholl</td>
@@ -846,6 +901,54 @@
                     <tr>
                       <td>Nada Bashnini</td>
                       <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Zhubo Zhang</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Joey Cheng-Wei Liu</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Abdulaziz Bari</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Mohammad Ali Faraz</td>
+                      <td>Brampton, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Omar Assiri</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Dilraj Sanghera</td>
+                      <td>London, Canada</td>
+                    </tr>
+                    <tr>
+                      <td>Gustavo Olaciregui Carrera</td>
+                      <td>David City, Panama</td>
+                    </tr>
+                    <tr>
+                      <td>Fawaz Alanazi</td>
+                      <td>Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Mohammad Bukhari</td>
+                      <td>Jeddah, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Susan McGrath</td>
+                      <td>Waterford, Ireland</td>
+                    </tr>
+                    <tr>
+                      <td>Ziyad Alfaraj</td>
+                      <td>Riyadh, Saudi Arabia</td>
+                    </tr>
+                    <tr>
+                      <td>Salman Mahmood</td>
+                      <td>Woodstock, Canada</td>
                     </tr>
                   </tbody>
                 </table>
